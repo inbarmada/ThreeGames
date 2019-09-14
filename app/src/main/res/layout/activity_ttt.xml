@@ -22,32 +22,39 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_height="4dp"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="4dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
@@ -67,9 +74,9 @@
                 android:id="@+id/tic1"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -80,9 +87,9 @@
                 android:id="@+id/tic2"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -93,9 +100,9 @@
                 android:id="@+id/tic3"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -104,32 +111,39 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="4dp"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="4dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
@@ -149,9 +163,9 @@
                 android:id="@+id/tic4"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -162,9 +176,9 @@
                 android:id="@+id/tic5"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -175,9 +189,9 @@
                 android:id="@+id/tic6"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -186,32 +200,39 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="4dp"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="4dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
@@ -231,9 +252,9 @@
                 android:id="@+id/tic7"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -244,9 +265,9 @@
                 android:id="@+id/tic8"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -257,9 +278,9 @@
                 android:id="@+id/tic9"
                 android:layout_width="90dip"
                 android:layout_height="90dip"
+                android:background="@color/ttt"
                 android:padding="3dip"
-                android:text=""
-                android:background="@color/ttt" />
+                android:text="" />
 
             <TextView
                 android:layout_width="@dimen/border_width"
@@ -268,32 +289,39 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="4dp"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="4dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
                 android:background="@color/border" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/border_width"
@@ -304,13 +332,12 @@
 
     <TextView
         android:id="@+id/turn"
-        android:layout_width="wrap_content"
+        android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </android.support.design.widget.CoordinatorLayout>
