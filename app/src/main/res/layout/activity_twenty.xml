@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TwentyActivity" >
+
+    <TextView
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_height="4dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box1"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box2"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box3"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box4"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="4dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box5"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box6"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box7"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box8"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="4dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box9"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box10"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box11"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box12"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="4dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box13"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box14"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box15"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/box16"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:padding="3dip"
+                android:text=""
+                android:background="@drawable/border" />
+
+            <TextView
+                android:layout_width="@dimen/border_width"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="4dp"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:background="@color/border" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+</android.support.constraint.ConstraintLayout>
