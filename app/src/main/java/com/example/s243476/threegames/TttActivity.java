@@ -1,5 +1,6 @@
 package com.example.s243476.threegames;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TttActivity extends AppCompatActivity {
@@ -17,6 +19,7 @@ public class TttActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt);
+
 
         Log.d("whatapp", "tictac");
 
@@ -48,6 +51,17 @@ public class TttActivity extends AppCompatActivity {
             });
 
         }
+
+        final Button restartButton = findViewById(R.id.restart);
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                playTic.restart();
+                print(playTic.getBoard(), playTic.getTurn());
+
+                //erase this:
+                startActivity(new Intent(TttActivity.this, Pop.class ));
+            }
+        });
 
 
     }
