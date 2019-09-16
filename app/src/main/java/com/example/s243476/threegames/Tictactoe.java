@@ -109,6 +109,7 @@ class Tictactoe{
             if(b[r][0] != ' ' && b[r][0] == b[r][1] && b[r][1] == b[r][2]){
                 playing = false;
                 Toast.makeText(context, "Game over! Player " + b[r][0] + " won!", Toast.LENGTH_LONG).show();
+
                 return b[r][0];
             }
             //Check column wins

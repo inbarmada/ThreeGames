@@ -17,7 +17,5 @@ public class Pop extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*.5), (int)(height*.2));
-
-
     }
 }

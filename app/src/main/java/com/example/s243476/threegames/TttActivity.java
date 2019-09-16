@@ -46,6 +46,9 @@ public class TttActivity extends AppCompatActivity {
                     Log.d("onClick", "" + thisVal);
                     playTic.makeMove(thisVal);
                     print(playTic.getBoard(), playTic.getTurn());
+
+                    startActivity(new Intent(TttActivity.this, Pop.class ));
+
                 }
 
             });
@@ -57,9 +60,6 @@ public class TttActivity extends AppCompatActivity {
             public void onClick(View v) {
                 playTic.restart();
                 print(playTic.getBoard(), playTic.getTurn());
-
-                //erase this:
-                startActivity(new Intent(TttActivity.this, Pop.class ));
             }
         });
 
