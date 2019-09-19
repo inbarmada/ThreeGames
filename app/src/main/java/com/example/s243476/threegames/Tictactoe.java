@@ -12,8 +12,10 @@ class Tictactoe{
     boolean playing;
     char curPlayer;
     Context context;
+    String winner;
 
     public Tictactoe(Context cxt){
+        winner = "Tie!";
         context = cxt;
         Log.d("in tictactoe", "so far so good");
         board = new char[3][3];
@@ -38,9 +40,9 @@ class Tictactoe{
             System.out.println(Arrays.toString(row));
     }
 
-    public void makeMove(int index){
+    public char makeMove(int index){
         if(!playing)
-            return;
+            return ' ';
         Log.d("makeMove", "" + index);
 
         int i = index/3;
@@ -51,8 +53,10 @@ class Tictactoe{
         if(board[i][j] == ' '){
             board[i][j] = curPlayer;
             switchPlayer();
-            checkEnd(board);
+            return checkEnd(board);
         }
+
+        return ' ';
     }
 
     public void switchPlayer(){
@@ -62,60 +66,21 @@ class Tictactoe{
             curPlayer = 'X';
     }
 
-//    public void move(char[][] b){
-//        place('X', b);
-//        for(char[] row : board)
-//            System.out.println(Arrays.toString(row));
-//
-//        if(checkEnd(b) != ' '){
-//            if(checkEnd(b) == 'X')
-//                System.out.println("Game over! PLayer X won!");
-//            else
-//                System.out.println("Game over! Tie!");
-//            playing = false;
-//            return;
-//        }
-//        place('O', b);
-//        if(checkEnd(b) != ' '){
-//            System.out.println("Game over! PLayer Y won!");
-//            playing = false;
-//        }
-//    }
-
-//    public char[][] place(char turn, char[][] b){
-//        System.out.println("Turn: " + turn);
-//        boolean goodMove = false;
-//
-//        while(!goodMove){
-//            System.out.println("Choose row (0,1,2): ");
-//            int r = read.nextInt();
-//            System.out.println("Choose column (0,1,2): ");
-//            int c = read.nextInt();
-//
-//            if(b[r][c] == ' '){
-//                goodMove = true;
-//                b[r][c] = turn;
-//            }else{
-//                System.out.println("Invalid. Try again: ");
-//            }
-//        }
-//
-//        return b;
-//    }
-
     public char checkEnd(char[][] b){
         for(int r = 0; r < b.length; r++){
             //Check row wins
             if(b[r][0] != ' ' && b[r][0] == b[r][1] && b[r][1] == b[r][2]){
                 playing = false;
-                Toast.makeText(context, "Game over! Player " + b[r][0] + " won!", Toast.LENGTH_LONG).show();
+                winner = "Game over! Player " + b[r][0] + " won!";
+                Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[r][0]) + " won!", Toast.LENGTH_LONG).show();
 
                 return b[r][0];
             }
             //Check column wins
             else if(b[0][r] != ' ' && b[0][r] == b[1][r] && b[1][r] == b[2][r]){
                 playing = false;
-                Toast.makeText(context, "Game over! Player " + b[0][r] + " won!", Toast.LENGTH_LONG).show();
+                winner = "Game over! Player " + b[0][r] + " won!";
+                Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[0][r]) + " won!", Toast.LENGTH_LONG).show();
                 return b[0][r];
             }
         }
@@ -123,7 +88,8 @@ class Tictactoe{
         //Check diagonal wins
         if(b[1][1] != ' ' && ((b[0][0] == b[1][1] && b[1][1] == b[2][2]) || (b[0][2] == b[1][1] && b[1][1] == b[2][0]))){
             playing = false;
-            Toast.makeText(context, "Game over! Player " + b[1][1] + " won!", Toast.LENGTH_LONG).show();
+            winner = "Game over! Player " + b[1][1] + " won!";
+            Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[1][1]) + " won!", Toast.LENGTH_LONG).show();
             return b[1][1];
         }
 
@@ -133,16 +99,23 @@ class Tictactoe{
                 if(c == ' ')
                     return ' ';
 
+        winner = "Tie!";
         Toast.makeText(context, "Tie!", Toast.LENGTH_LONG).show();
         return '=';
     }
 
     public void restart(){
+        winner = "Tie!";
+
         for(int i = 0; i < 3; i++)
             for(int j = 0; j < 3; j++)
                 board[i][j] = ' ';
 
         playing = true;
 
+    }
+
+    public String getWinner(){
+        return winner;
     }
 }

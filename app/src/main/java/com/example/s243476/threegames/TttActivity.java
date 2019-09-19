@@ -44,11 +44,14 @@ public class TttActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Log.d("onClick", "" + thisVal);
-                    playTic.makeMove(thisVal);
+                    char winner = playTic.makeMove(thisVal);
                     print(playTic.getBoard(), playTic.getTurn());
 
-                    startActivity(new Intent(TttActivity.this, Pop.class ));
-
+                    if(winner != ' ') {
+                        Intent popUp = new Intent(TttActivity.this, Pop.class);
+                        popUp.putExtra("Disp_String", playTic.getWinner());
+                        startActivity(popUp);
+                    }
                 }
 
             });
