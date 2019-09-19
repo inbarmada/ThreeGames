@@ -99,7 +99,7 @@ class Tictactoe{
                 if(c == ' ')
                     return ' ';
 
-        winner = "Tie!";
+        winner = "            Tie!";
         Toast.makeText(context, "Tie!", Toast.LENGTH_LONG).show();
         return '=';
     }

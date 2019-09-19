@@ -2,10 +2,7 @@ package com.example.s243476.threegames;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +11,14 @@ import android.widget.TextView;
 public class TttActivity extends AppCompatActivity {
 
     TextView[] ttt = new TextView[9];
+    Tictactoe playTic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt);
 
+        playTic = new Tictactoe(getApplicationContext());
 
         Log.d("whatapp", "tictac");
 
@@ -33,7 +32,6 @@ public class TttActivity extends AppCompatActivity {
         ttt[7] = (TextView) findViewById(R.id.tic8);
         ttt[8] = (TextView) findViewById(R.id.tic9);
 
-        final Tictactoe playTic = new Tictactoe(getApplicationContext());
         print(playTic.getBoard(), playTic.getTurn());
 
         for(int i = 0; i < 9; i++){
@@ -50,7 +48,7 @@ public class TttActivity extends AppCompatActivity {
                     if(winner != ' ') {
                         Intent popUp = new Intent(TttActivity.this, Pop.class);
                         popUp.putExtra("Disp_String", playTic.getWinner());
-                        startActivity(popUp);
+                        startActivityForResult(popUp, 1);
                     }
                 }
 
@@ -65,8 +63,6 @@ public class TttActivity extends AppCompatActivity {
                 print(playTic.getBoard(), playTic.getTurn());
             }
         });
-
-
     }
 
     public void print(char[][] mat, char turn) {
@@ -87,6 +83,16 @@ public class TttActivity extends AppCompatActivity {
         //Write turn
         TextView sayScore = (TextView) findViewById(R.id.turn);
         sayScore.setText("Turn: " + turn);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                boolean res = data.getBooleanExtra("check_restart", false);
+                playTic.restart();
+                print(playTic.getBoard(), playTic.getTurn());
+            }
+        }
     }
 
 }
