@@ -72,15 +72,12 @@ class Tictactoe{
             if(b[r][0] != ' ' && b[r][0] == b[r][1] && b[r][1] == b[r][2]){
                 playing = false;
                 winner = "Game over! Player " + b[r][0] + " won!";
-                Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[r][0]) + " won!", Toast.LENGTH_LONG).show();
-
                 return b[r][0];
             }
             //Check column wins
             else if(b[0][r] != ' ' && b[0][r] == b[1][r] && b[1][r] == b[2][r]){
                 playing = false;
                 winner = "Game over! Player " + b[0][r] + " won!";
-                Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[0][r]) + " won!", Toast.LENGTH_LONG).show();
                 return b[0][r];
             }
         }
@@ -89,7 +86,6 @@ class Tictactoe{
         if(b[1][1] != ' ' && ((b[0][0] == b[1][1] && b[1][1] == b[2][2]) || (b[0][2] == b[1][1] && b[1][1] == b[2][0]))){
             playing = false;
             winner = "Game over! Player " + b[1][1] + " won!";
-            Toast.makeText(context, "Game over! Player " + String.valueOf((char)b[1][1]) + " won!", Toast.LENGTH_LONG).show();
             return b[1][1];
         }
 
@@ -100,7 +96,6 @@ class Tictactoe{
                     return ' ';
 
         winner = "            Tie!";
-        Toast.makeText(context, "Tie!", Toast.LENGTH_LONG).show();
         return '=';
     }
 

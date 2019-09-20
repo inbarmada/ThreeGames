@@ -13,10 +13,14 @@
 
     <Button
         android:id="@+id/restart"
+        android:background="@color/ttt"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_below="@+id/popUpMsg"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="0dp"
         android:text="Restart" />
 </RelativeLayout>
