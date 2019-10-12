@@ -1,5 +1,6 @@
 package com.example.s243476.threegames;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
@@ -10,51 +11,54 @@ import android.support.v7.content.res.AppCompatResources;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
 public class TwentyActivity extends AppCompatActivity {
-
+    Twenty playTwenty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twenty);
 
-        final Twenty playTwenty = new Twenty(getApplicationContext());
+        playTwenty = new Twenty(getApplicationContext());
 
 
         final Button restartButton = findViewById(R.id.restart);
         restartButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                playTwenty.restartMat(new int[4][4]);
-                print(playTwenty.getMat(), playTwenty.getScore());
+                playTwenty.restartMat();
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
             }
         });
+
 
         TextView Board = (TextView) findViewById(R.id.board);
 
         Board.setOnTouchListener(new OnSwipeTouchListener(TwentyActivity.this) {
+
             public void onSwipeTop() {
                 playTwenty.setDir(Direction.UP);
                 playTwenty.move();
-                print(playTwenty.getMat(), playTwenty.getScore());
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
             }
             public void onSwipeRight() {
                 playTwenty.setDir(Direction.RIGHT);
                 playTwenty.move();
-                print(playTwenty.getMat(), playTwenty.getScore());
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
             }
             public void onSwipeLeft() {
                 playTwenty.setDir(Direction.LEFT);
                 playTwenty.move();
-                print(playTwenty.getMat(), playTwenty.getScore());
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
             }
             public void onSwipeBottom() {
                 playTwenty.setDir(Direction.DOWN);
                 playTwenty.move();
-                print(playTwenty.getMat(), playTwenty.getScore());
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
             }
 
         });
@@ -67,12 +71,12 @@ public class TwentyActivity extends AppCompatActivity {
 
 
 
-        print(playTwenty.getMat(), playTwenty.getScore());
+        print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
     }
 
 
 
-    public void print(int[][] mat, int score){
+    public void print(int[][] mat, int score, boolean won, boolean lost, boolean cont){
         TextView[] boxes = new TextView[16];
         boxes[0] = (TextView) findViewById(R.id.box1);
         boxes[1] = (TextView) findViewById(R.id.box2);
@@ -108,6 +112,12 @@ public class TwentyActivity extends AppCompatActivity {
         //Write score
         TextView sayScore = (TextView) findViewById(R.id.score);
         sayScore.setText("Score: " + score);
+
+        if((won && !cont) || lost){
+            Intent popUp = new Intent(TwentyActivity.this, PopTwenty.class);
+            popUp.putExtra("Won", (won && (!cont)));
+            startActivityForResult(popUp, 1);
+        }
     }
 
     public int findColor(int num){
@@ -127,6 +137,19 @@ public class TwentyActivity extends AppCompatActivity {
             case 1024: return ContextCompat.getColor(this, R.color.c1024);
             case 2048: return ContextCompat.getColor(this, R.color.c2048);
             default: return ContextCompat.getColor(this, R.color.other);
+        }
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                boolean res = data.getBooleanExtra("check_restart", false);
+                boolean cont = data.getBooleanExtra("check_cont", true);
+                if(res) playTwenty.restartMat();
+
+                playTwenty.setCont(cont);
+                print(playTwenty.getMat(), playTwenty.getScore(), playTwenty.getWon(), playTwenty.getLost(), playTwenty.getCont());
+            }
         }
     }
 }

@@ -19,6 +19,9 @@
     <color name="other">#f7ad00</color>
     <color name="border">#d1d1d1</color>
     <color name="ttt">#4ea2b9</color>
-    <color name="popUp">#88aae9</color>
+    <color name="popUp">#ffffff</color>
+    <color name="msborder">#300a76</color>
+    <color name="mshiddensquare">#bc9cf7</color>
+    <color name="msopensquare">#7f47e7</color>
 
 </resources>

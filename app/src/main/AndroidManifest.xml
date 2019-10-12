@@ -20,9 +20,14 @@
         <activity
             android:name=".TttActivity"
             android:label="@string/title_activity_ttt"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Pop"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".PopTwenty"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".MSActivity"></activity>
     </application>
 
 </manifest>

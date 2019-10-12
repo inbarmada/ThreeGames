@@ -20,8 +20,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tictacgo(View view){
-        Log.d("got here", "ya tictacgo");
         Intent randomIntent = new Intent(this, TttActivity.class);
+        startActivity(randomIntent);
+    }
+
+    public void minego(View view){
+        Intent randomIntent = new Intent(this, MSActivity.class);
         startActivity(randomIntent);
     }
 }

@@ -13,6 +13,7 @@ class Twenty{
     boolean playing;
     boolean won;
     boolean stopped;
+    boolean cont;
     int score;
     Direction curDir;
     Context context;
@@ -29,11 +30,8 @@ class Twenty{
             Log.d("TWENTY", Arrays.toString(row));
 
         Log.d("TWENTY", "array printed");
-        //FOR TESTING PURPOSES
-        int[][] numbers = {{2, 4, 0, 32},
-                {64, 256, 128, 1024},
-                {8, 0, 2, 4},
-                {256, 64, 2048, 8}};
+        int[][] numbers = new int[4][4];
+        addRand(numbers);
 
         for(int i = 0; i < 4; i++)
             for(int j = 0; j < 4; j++){
@@ -55,7 +53,11 @@ class Twenty{
         return nums;
     }
 
-    public void restartMat(int[][] mat){
+    public void restartMat(){
+        won = false;
+        playing = true;
+        cont = false;
+        int[][] mat = new int[4][4];
         for(int i = 0; i < 4; i++)
             for(int j = 0; j < 4; j++)
                 nums[i][j] = mat[i][j];
@@ -76,6 +78,19 @@ class Twenty{
             System.out.println("Game Over!");
 
         System.out.println("Your score was " + score);
+    }
+
+    public boolean getWon(){
+        return won;
+    }
+    public boolean getLost(){
+        return !playing;
+    }
+    public void setCont(boolean val){
+        cont = val;
+    }
+    public boolean getCont(){
+        return cont;
     }
 
     /*Everything that goes into one move*/
