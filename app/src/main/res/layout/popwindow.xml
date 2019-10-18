@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/popUp">
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/border" android:layout_gravity="center">
 
 
     <TextView
         android:id="@+id/popUpMsg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
-        android:text="TextView" />
+        android:text=""
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/popUpMsg">
+        android:layout_below="@+id/popUpMsg"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/cont"
             android:background="@color/ttt"
@@ -39,9 +43,9 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="10dp"
             android:text="Restart"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
 

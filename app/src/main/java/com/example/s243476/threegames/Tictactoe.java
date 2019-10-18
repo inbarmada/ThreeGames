@@ -95,7 +95,7 @@ class Tictactoe{
                 if(c == ' ')
                     return ' ';
 
-        winner = "            Tie!";
+        winner = "Tie!";
         return '=';
     }
 
