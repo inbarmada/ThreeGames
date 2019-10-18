@@ -21,6 +21,7 @@ public class MSActivity extends AppCompatActivity {
     int borderColor;
     int hiddenSquareColor;
     int openSquareColor;
+    int bombSquareColor;
 
     int l = 10;
     int w = 10;
@@ -33,13 +34,14 @@ public class MSActivity extends AppCompatActivity {
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        height = displayMetrics.heightPixels - 40;
-        width = displayMetrics.widthPixels - 40;
+        height = displayMetrics.heightPixels;
+        width = displayMetrics.widthPixels;
         flagOn = false;
 
         borderColor = ContextCompat.getColor(this, R.color.msborder);
         hiddenSquareColor = ContextCompat.getColor(this, R.color.mshiddensquare);
         openSquareColor = ContextCompat.getColor(this, R.color.msopensquare);
+        bombSquareColor = ContextCompat.getColor(this, R.color.bombsquare);
 
         //Create the grid image and add boxes to tv mat
         createBoxes(l, w);
@@ -59,6 +61,10 @@ public class MSActivity extends AppCompatActivity {
     public void createBoxes(int l, int w){
         final TableLayout field = (TableLayout) findViewById(R.id.field);
 
+        int borderStroke = Math.min(height/l/20, width/w*2/30);
+        int rowHeight = height/l/2;
+        int rowWidth = width/w*2/3;
+
         //Border above row
         final TableRow above = new TableRow(this);
         above.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT,TableRow.LayoutParams.WRAP_CONTENT));
@@ -69,7 +75,7 @@ public class MSActivity extends AppCompatActivity {
         TableRow.LayoutParams params = (TableRow.LayoutParams) above.getLayoutParams();
         params.span = 2*w + 1; //amount of columns you will span
 
-        upBorder.setHeight(20);
+        upBorder.setHeight(borderStroke);
         upBorder.setBackgroundColor(borderColor);
 
         upBorder.setLayoutParams(params);
@@ -82,15 +88,14 @@ public class MSActivity extends AppCompatActivity {
             field.addView(tr);
             for(int j = 0; j < w; j++){
                 final TextView border = new TextView(this);
-                border.setHeight(height/20);
-                border.setWidth(20);
+                border.setHeight(rowHeight);
+                border.setWidth(borderStroke);
                 border.setBackgroundColor(borderColor);
                 tr.addView(border);
 
                 final TextView tv = new TextView(this);
-//                tv.setText("");
-                tv.setHeight(height/l/2);
-                tv.setWidth(width/w*2/3);
+                tv.setHeight(rowHeight);
+                tv.setWidth(rowWidth);
                 tv.setBackgroundColor(hiddenSquareColor);
                 tr.addView(tv);
 
@@ -100,8 +105,8 @@ public class MSActivity extends AppCompatActivity {
 
             //Edge border
             final TextView border = new TextView(this);
-            border.setHeight(height/20);
-            border.setWidth(20);
+            border.setHeight(rowHeight);
+            border.setWidth(borderStroke);
             border.setBackgroundColor(borderColor);
             tr.addView(border);
 
@@ -115,7 +120,7 @@ public class MSActivity extends AppCompatActivity {
             TableRow.LayoutParams params1 = (TableRow.LayoutParams) below.getLayoutParams();
             params1.span = 2*w + 1; //amount of columns you will span
 
-            lowBorder.setHeight(20);
+            lowBorder.setHeight(borderStroke);
             lowBorder.setBackgroundColor(borderColor);
 
             lowBorder.setLayoutParams(params1);
@@ -203,7 +208,12 @@ public class MSActivity extends AppCompatActivity {
                     boxes[i][j].setBackgroundColor(openSquareColor);
 
                     if(grid[i][j] != 0) {
-                        boxes[i][j].setText("" + grid[i][j]);
+                        if(grid[i][j] != -1)
+                            boxes[i][j].setText("" + grid[i][j]);
+                        else {
+                            boxes[i][j].setText("*");
+                            boxes[i][j].setBackgroundColor(bombSquareColor);
+                        }
                     }
                 }else if(playerView[i][j] == 2){
                     boxes[i][j].setText("X");

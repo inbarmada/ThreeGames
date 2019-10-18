@@ -23,5 +23,6 @@
     <color name="msborder">#300a76</color>
     <color name="mshiddensquare">#bc9cf7</color>
     <color name="msopensquare">#7f47e7</color>
+    <color name="bombsquare">#f9919d</color>
 
 </resources>
