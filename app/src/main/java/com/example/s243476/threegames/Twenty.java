@@ -1,7 +1,6 @@
 package com.example.s243476.threegames;
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -30,9 +29,11 @@ class Twenty{
             Log.d("TWENTY", Arrays.toString(row));
 
         Log.d("TWENTY", "array printed");
-        int[][] numbers = new int[4][4];
-        addRand(numbers);
+        //int[][] numbers = new int[4][4];
 
+        int [][] numbers = {{2, 2048, 2, 0},{2,2,2,2}, {2,2,2,2}, {2,2,2,2}};
+
+        addRand(numbers);
         for(int i = 0; i < 4; i++)
             for(int j = 0; j < 4; j++){
                 nums[i][j] = numbers[i][j];
@@ -316,7 +317,6 @@ class Twenty{
 
         //If nothing helped - yes, the game is over
 
-        Toast.makeText(context, "Oh no! You lost!", Toast.LENGTH_LONG).show();
         return true;
     }
 
@@ -354,7 +354,6 @@ class Twenty{
 
     /*Sequence that happens if you won*/
     public void winSequence(){
-        Toast.makeText(context, "Great job! You Won!", Toast.LENGTH_LONG).show();
         System.out.println("Great job! You won!");
         System.out.println("Would you like to continue? (Y/N)");
     }

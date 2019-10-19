@@ -95,12 +95,13 @@ public class MS {
             init(r, c);
         cnt++;
 
-        if(grid[r][c] == -1) {
-            Log.d("stuff","death");
-            die();
+        if(!death) {
+            if (grid[r][c] == -1) {
+                Log.d("stuff", "death");
+                die();
+            } else
+                checkAround(r, c);
         }
-        else
-            checkAround(r, c);
     }
 
     public void checkAround(int r, int c) {

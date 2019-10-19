@@ -20,7 +20,7 @@ public class PopTwenty extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.5), (int)(height*.3));
+        getWindow().setLayout((int)(width*.7), (int)(height*.4));
 
         boolean won = getIntent().getBooleanExtra("Won", false);
 
